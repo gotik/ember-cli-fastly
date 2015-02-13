@@ -1,25 +1,33 @@
 {
   "name": "ember-cli-fastly",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1",
+  "description": "Addon for simplying Fastly API interaction",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
   "scripts": {
-    "start": "ember server",
-    "build": "ember build",
-    "test": "ember test"
+    "node-test": "node node-tests/runner",
+    "ember-test": "ember test",
+    "test": "npm run node-test && npm run ember-test"
   },
-  "repository": "",
+  "repository": "https://github.com/gotik/ember-cli-fastly.git",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Juan Pablo Pinilla Ossa <juan@kamikazepanda.com>",
   "license": "MIT",
+  "keywords": [
+    "ember-addon",
+    "fastly"
+  ],
+  "ember-addon": {
+    "configPath": "tests/dummy/config/fastly"
+  },
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.0",
     "broccoli-ember-hbs-template-compiler": "^1.6.1",
+    "chai": "^2.0.0",
     "ember-cli": "0.1.14",
     "ember-cli-6to5": "^3.0.0",
     "ember-cli-app-version": "0.3.1",
@@ -32,12 +40,11 @@
     "ember-data": "1.0.0-beta.14.1",
     "ember-export-application-global": "^1.0.2",
     "express": "^4.8.5",
-    "glob": "^4.0.5"
+    "glob": "^4.0.5",
+    "mocha": "^2.1.0"
   },
-  "keywords": [
-    "ember-addon"
-  ],
-  "ember-addon": {
-    "configPath": "tests/dummy/config"
+  "dependencies": {
+    "core-object": "^1.0.0",
+    "request": "^2.53.0"
   }
 }
