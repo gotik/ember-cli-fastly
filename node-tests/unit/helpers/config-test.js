@@ -3,6 +3,13 @@ var ConfigHelper = require('../../../lib/helpers/config');
 var chai = require('chai');
 var expect = chai.expect;
 
+describe('config helper (smoke test)', function() {
+  it('exists', function() {
+    var helper = new ConfigHelper();
+    expect(helper).to.be.an('object');
+  });
+});
+
 describe('config helper', function() {
   var helper;
 

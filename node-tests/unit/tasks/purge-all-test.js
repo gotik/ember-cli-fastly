@@ -3,6 +3,15 @@ var PurgeAllTask = require('../../../lib/tasks/purge-all');
 var chai = require('chai');
 var expect = chai.expect;
 
+describe('fastly:purge-all task (smoke test)', function() {
+  it('exists', function() {
+    var task = new PurgeAllTask({
+      project: { isEmberCLIProject: function() {} }
+    });
+    expect(task).to.be.an('object');
+  });
+});
+
 describe('fastly:purge-all task', function() {
   var task;
   var project;
